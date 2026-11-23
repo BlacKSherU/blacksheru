@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miguel García — Ingeniero de Sistemas y Desarrollador Full-Stack</title>
+  <meta name="description" content="Portafolio de Miguel Alejandro García Ovalles: Ingeniero de Sistemas, desarrollador full-stack y arquitecto de soluciones POS y multiplataforma (Smart TV, móvil y web).">
+  <meta name="author" content="Miguel Alejandro García Ovalles">
+  <meta name="theme-color" content="#0a0c11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://blacksheru.pages.dev/">
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blacksheru.pages.dev/">
+  <meta property="og:title" content="Miguel García — Systems Engineer & Full-Stack Developer">
+  <meta property="og:description" content="Full-stack, cloud POS and multiplatform Smart TV / mobile solutions.">
+  <meta property="og:image" content="https://blacksheru.pages.dev/assets/img/og-image.png">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Aplica el tema guardado antes de pintar para evitar parpadeos -->
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Miguel Alejandro García Ovalles",
+    "jobTitle": "Systems Engineer · Full-Stack Software Developer",
+    "url": "https://blacksheru.pages.dev/",
+    "email": "mailto:tramitesgarciamiguel@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Cabudare", "addressRegion": "Lara", "addressCountry": "VE" },
+    "alumniOf": "Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional Bolivariana (UNEFA)",
+    "knowsLanguage": ["es", "en"],
+    "sameAs": ["https://github.com/blacksheru", "https://www.linkedin.com/in/miguel-garcia-92056228b"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="Principal">
+      <a class="brand" href="#top" aria-label="Miguel García — inicio">
+        <span class="brand-mark" aria-hidden="true">MG</span>
+        <span class="brand-name">Miguel García</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-i18n="nav.about">Perfil</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn lang-toggle" id="lang-toggle" type="button" data-i18n-aria="a11y.lang" aria-label="Switch to English">EN</button>
+        <button class="icon-btn" id="theme-toggle" type="button" data-i18n-aria="a11y.theme" aria-label="Cambiar tema claro/oscuro">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="m-top" d="M4 7h16"/><path class="m-mid" d="M4 12h16"/><path class="m-bot" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <span data-i18n="hero.location">Cabudare, Lara, Venezuela · Trabajo remoto</span>
+          </p>
+          <h1 class="hero-title">
+            <span class="hero-greeting" data-i18n="hero.greeting">Hola, soy</span>
+            <span class="hero-name">Miguel Alejandro<br><span class="grad">García Ovalles</span></span>
+          </h1>
+          <p class="hero-role" data-i18n="hero.role">Ingeniero de Sistemas · Desarrollador Full-Stack · Arquitecto de soluciones POS y multiplataforma</p>
+          <p class="hero-lead" data-i18n="hero.lead">Construyo software que se usa en el mundo real —puntos de venta en la nube, apps para Smart TV y móvil, plataformas web— y sé llevarlo hasta el cliente.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#projects">
+              <span data-i18n="hero.ctaProjects">Ver proyectos</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#contact" data-i18n="hero.ctaContact">Contactar</a>
+            <a class="btn btn-ghost" id="cv-link" href="assets/cv/Miguel-Garcia-CV.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              <span data-i18n="hero.ctaCv">Descargar CV</span>
+            </a>
+          </div>
+          <ul class="hero-social" aria-label="Redes">
+            <li><a href="https://github.com/blacksheru" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/miguel-garcia-92056228b" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a></li>
+            <li><a href="mailto:tramitesgarciamiguel@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="terminal-title" data-i18n="terminal.title">~/blacksheru — zsh</span>
+            </div>
+            <pre class="terminal-body" id="terminal-body"></pre>
+          </div>
+          <div class="float-card float-a">
+            <span class="fc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+            <span><strong>Smart TV</strong><small>Fire TV · Roku · Vega OS</small></span>
+          </div>
+          <div class="float-card float-b">
+            <span class="fc-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/></svg></span>
+            <span><strong>Cloud POS</strong><small>Fiscal · Wolt · Bolt Food</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="stats reveal" id="stats"></dl>
+      </div>
+    </section>
+
+    <!-- ============ SECTORES ============ -->
+    <div class="sectors" aria-label="Sectores">
+      <div class="container sectors-inner">
+        <span class="sectors-label" data-i18n="sectors.label">Sistemas en producción para</span>
+        <ul class="sectors-list" id="sectors-list"></ul>
+      </div>
+    </div>
+
+    <!-- ============ PERFIL ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="about.eyebrow">01 · Perfil</p>
+          <h2 data-i18n="about.title">Ingeniería de software con visión de negocio</h2>
+        </header>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p data-i18n="about.body"></p>
+            <p data-i18n="about.body2"></p>
+          </div>
+          <div class="services reveal" id="services"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCIA ============ -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="experience.eyebrow">02 · Experiencia</p>
+          <h2 data-i18n="experience.title">Trayectoria profesional</h2>
+        </header>
+        <ol class="timeline reveal" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="projects.eyebrow">03 · Proyectos</p>
+          <h2 data-i18n="projects.title">Productos en los que he trabajado</h2>
+          <p class="section-intro" data-i18n="projects.intro"></p>
+        </header>
+        <div class="projects reveal" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES + FORMACIÓN ============ -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="skills.eyebrow">04 · Habilidades</p>
+          <h2 data-i18n="skills.title">Stack técnico y profesional</h2>
+        </header>
+        <div class="skills reveal" id="skills-grid"></div>
+
+        <div class="edu-grid reveal">
+          <article class="card edu-card">
+            <h3 class="card-label" data-i18n="education.title">Formación</h3>
+            <div class="edu-body" id="education"></div>
+          </article>
+          <article class="card edu-card">
+            <h3 class="card-label" data-i18n="education.languagesTitle">Idiomas</h3>
+            <ul class="lang-list" id="languages"></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-copy">
+            <p class="eyebrow" data-i18n="contact.eyebrow">05 · Contacto</p>
+            <h2 data-i18n="contact.title">¿Tienes un proyecto en mente?</h2>
+            <p data-i18n="contact.text"></p>
+            <a class="btn btn-primary" href="mailto:tramitesgarciamiguel@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+              <span data-i18n="contact.write">Escríbeme</span>
+            </a>
+          </div>
+          <ul class="contact-list" id="contact-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Miguel Alejandro García Ovalles. <span data-i18n="footer.made">Diseñado y desarrollado con HTML, CSS y JavaScript.</span></p>
+      <a href="#top" class="footer-top" data-i18n="footer.top">Volver arriba</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
