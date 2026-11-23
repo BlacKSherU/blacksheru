@@ -65,14 +65,14 @@ window.PORTFOLIO = {
         items: [
           ["5", "Ecosistemas TV y móvil"],
           ["9", "Lenguajes de programación"],
-          ["3", "Mercados: VE · MT · US"],
+          ["4", "Productos comerciales"],
           ["2", "Idiomas de trabajo"],
         ],
         services: [
           "Desarrollo full-stack",
           "POS en la nube + fiscal",
           "Apps Smart TV / móvil",
-          "Ventas B2B ES / EN",
+          "Distribución B2B",
         ],
         total: "TOTAL",
         totalValue: "1 INGENIERO",
@@ -199,14 +199,14 @@ window.PORTFOLIO = {
         items: [
           ["5", "TV & mobile ecosystems"],
           ["9", "Programming languages"],
-          ["3", "Markets: VE · MT · US"],
+          ["4", "Commercial products"],
           ["2", "Working languages"],
         ],
         services: [
           "Full-stack development",
           "Cloud POS + fiscal",
           "Smart TV / mobile apps",
-          "B2B sales ES / EN",
+          "B2B distribution",
         ],
         total: "TOTAL",
         totalValue: "1 ENGINEER",
@@ -376,30 +376,6 @@ window.PORTFOLIO = {
       tags: {
         es: ["Full-Stack", "Backend", "Frontend", "APIs de terceros"],
         en: ["Full-Stack", "Backend", "Frontend", "Third-party APIs"],
-      },
-    },
-    {
-      company: "Capital Payment Systems",
-      role: {
-        es: "Ingeniero de Desarrollo de Software y Ejecutivo de Ventas",
-        en: "Software Development Engineer & Sales Executive",
-      },
-      period: { es: "Ago 2024 – Actualidad", en: "Aug 2024 – Present" },
-      meta: { es: "Barquisimeto / Mercado de EE. UU.", en: "Barquisimeto / US Market" },
-      current: true,
-      bullets: {
-        es: [
-          "Desarrollé y di soporte a módulos de software de punto de venta, incluido el sistema POS Baruc X7, alineando periféricos de hardware y lógica de cobro con las necesidades de cada comercio.",
-          "Ejecutivo de ventas B2B para un proveedor de POS de EE. UU.: demostraciones de producto, consultoría a comercios y negociación de contratos en inglés y español.",
-        ],
-        en: [
-          "Developed and supported point-of-sale software modules, including the Baruc X7 POS system, aligning hardware peripherals and checkout logic with merchant needs.",
-          "Operated as a B2B sales executive for a US-based POS provider, conducting product demonstrations, merchant consultations and contract negotiations in English and Spanish.",
-        ],
-      },
-      tags: {
-        es: ["Baruc X7", "POS", "Periféricos", "Ventas B2B", "Bilingüe"],
-        en: ["Baruc X7", "POS", "Peripherals", "B2B sales", "Bilingual"],
       },
     },
     {
@@ -583,20 +559,6 @@ window.PORTFOLIO = {
         { label: "Steam", url: "https://store.steampowered.com/app/5174850/Relocate_Motorhomes_Simulator/" },
         { label: { es: "Google Play (prueba)", en: "Google Play (playtest)" }, url: "https://play.google.com/store/apps/details?id=com.crispolimited.relocate" },
       ],
-    },
-    {
-      name: "Baruc X7 POS",
-      art: "terminal",
-      kind: { es: "Hardware POS · Capital Payment Systems", en: "POS hardware · Capital Payment Systems" },
-      summary: {
-        es: "Módulos de punto de venta que integran periféricos de hardware y lógica de cobro.",
-        en: "Point-of-sale modules integrating hardware peripherals and checkout logic.",
-      },
-      role: {
-        es: "Desarrollo, soporte y preventa en EE. UU.",
-        en: "Development, support and US pre-sales",
-      },
-      stack: { es: ["POS", "Hardware", "Cobro"], en: ["POS", "Hardware", "Checkout"] },
     },
     {
       name: { es: "Portal de Transparencia Palavecino", en: "Palavecino Transparency Portal" },

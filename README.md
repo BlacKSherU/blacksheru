@@ -11,7 +11,6 @@ Construyo software que se usa en el mundo real: puntos de venta en la nube, apps
 - 📺 **VivaPlayer**: reproductor IPTV para Android, Fire TV, Vega OS, Roku e iOS, con portal de administración
 - 🚐 **Relocate**: simulador multiplataforma de reubicación de autocaravanas
 - 🏢 **HumboldtTech**: ingeniería full-stack en VivaPlayer, Roomfully y YumYum
-- 💳 **Capital Payment Systems**: módulos POS (Baruc X7) y ventas B2B en EE. UU.
 
 **Stack:** Python · TypeScript · JavaScript · PHP · Dart · Java · C · BrightScript · SQL ·
 Node.js · NestJS · React · Laravel · Flutter · PostgreSQL · MariaDB/MySQL · Supabase · Cloudflare · WebRTC

@@ -71,17 +71,6 @@
   var ARROW_DN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v14M6 12l6 6 6-6"/></svg>';
 
   /* ---------- Ilustraciones de proyectos (400x200, estilo plano técnico) ---------- */
-  function keypad() {
-    var out = "";
-    for (var r = 0; r < 4; r++) {
-      for (var c = 0; c < 3; c++) {
-        var cls = r === 3 && c === 2 ? "a-accent" : "a-muted";
-        out += '<rect class="' + cls + '" x="' + (158 + c * 26) + '" y="' + (104 + r * 18) + '" width="20" height="12" rx="2"/>';
-      }
-    }
-    return out;
-  }
-
   function tiles() {
     var out = "";
     [70, 120].forEach(function (y, ri) {
@@ -139,19 +128,6 @@
       '<circle class="a-wheel" cx="254" cy="164" r="13"/><circle class="a-accent" cx="254" cy="164" r="4"/>' +
       '<path class="a-line" d="M20 178h360"/>' +
       '<path class="a-line a-dashed-wide" d="M30 190h340"/>',
-    terminal:
-      '<g transform="rotate(-14 300 92)">' +
-      '<rect class="a-accent" x="232" y="54" width="128" height="78" rx="6"/>' +
-      '<rect class="a-knock a-op" x="232" y="70" width="128" height="13"/>' +
-      '<rect class="a-chip" x="246" y="96" width="22" height="16" rx="2"/>' +
-      "</g>" +
-      '<path class="a-line" d="M120 80a16 16 0 0 0 0 30M108 70a30 30 0 0 0 0 50"/>' +
-      '<rect class="a-panel a-solid" x="140" y="16" width="110" height="174" rx="10"/>' +
-      '<rect class="a-soft" x="154" y="30" width="82" height="62" rx="3"/>' +
-      '<circle class="a-accent" cx="195" cy="56" r="13"/>' +
-      '<path class="a-check" d="m189 56 4.5 4.5 8-8.5"/>' +
-      '<path class="a-line" d="M174 80h42"/>' +
-      keypad(),
     civic:
       '<path class="a-panel" d="M40 76 120 38l80 38z"/>' +
       '<circle class="a-accent" cx="120" cy="62" r="6"/>' +
