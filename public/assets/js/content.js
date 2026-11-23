@@ -2,6 +2,7 @@
  * Contenido del portafolio (ES / EN).
  * Edita este archivo para actualizar textos, experiencia, proyectos y habilidades.
  * Cualquier campo con la forma { es: "...", en: "..." } se traduce automáticamente.
+ * En algunos textos, *asteriscos* resaltan palabras con el color de acento.
  */
 window.PORTFOLIO = {
   profile: {
@@ -9,18 +10,19 @@ window.PORTFOLIO = {
     shortName: "Miguel García",
     email: "tramitesgarciamiguel@gmail.com",
     phone: "+58 412-9872828",
-    phoneHref: "tel:+584129872828",
     whatsapp: "https://wa.me/584129872828",
     linkedin: "https://www.linkedin.com/in/miguel-garcia-92056228b",
     linkedinLabel: "in/miguel-garcia-92056228b",
     github: "https://github.com/blacksheru",
     githubLabel: "github.com/blacksheru",
     cv: "assets/cv/Miguel-Garcia-CV.pdf",
+    timeZone: "America/Caracas",
   },
 
   /* ---------- Textos de interfaz ---------- */
   i18n: {
     es: {
+      locale: "es-VE",
       meta: {
         title: "Miguel García — Ingeniero de Sistemas y Desarrollador Full-Stack",
         description:
@@ -38,82 +40,87 @@ window.PORTFOLIO = {
         projects: "Proyectos",
         skills: "Habilidades",
         contact: "Contacto",
+        menu: "Menú",
+        close: "Cerrar",
       },
       hero: {
-        location: "Cabudare, Lara, Venezuela · Trabajo remoto",
-        greeting: "Hola, soy",
-        role: "Ingeniero de Sistemas · Desarrollador Full-Stack · Arquitecto de soluciones POS y multiplataforma",
+        kicker: "Portafolio",
+        place: "Cabudare, Lara — Venezuela",
+        time: "Hora local",
+        fullName: "Miguel Alejandro García Ovalles",
+        role: "Ingeniero de Sistemas · Full-Stack · POS y multiplataforma",
         lead:
-          "Construyo software que se usa en el mundo real —puntos de venta en la nube, apps para Smart TV y móvil, plataformas web— y sé llevarlo hasta el cliente.",
+          "Construyo software que se usa en el mundo real —puntos de venta en la nube, apps para Smart TV y móvil, plataformas web— y lo llevo hasta el cliente.",
         ctaProjects: "Ver proyectos",
-        ctaContact: "Contactar",
         ctaCv: "Descargar CV",
+        ctaContact: "Contactar",
       },
-      stats: [
-        { value: "5", label: "ecosistemas de TV y móvil" },
-        { value: "9", label: "lenguajes de programación" },
-        { value: "3", label: "mercados: VE · MT · EE. UU." },
-        { value: "2", label: "idiomas de trabajo" },
-      ],
-      sectors: {
-        label: "Sistemas en producción para",
-        items: ["Hostelería", "Retail", "Streaming", "Pagos", "Sector público"],
-      },
-      terminal: {
-        title: "~/blacksheru — zsh",
-        whoami: "Miguel García · Ingeniero de Sistemas",
-        focus: [
-          "POS en la nube y flujos fiscales",
-          "Apps para Smart TV y móvil",
-          "Plataformas web full-stack",
+      receipt: {
+        title: "BLACKSHERU · SISTEMAS",
+        place: "Cabudare, Lara · Venezuela",
+        ticket: "TICKET #0001",
+        qty: "CANT",
+        desc: "DESCRIPCIÓN",
+        items: [
+          ["5", "Ecosistemas TV y móvil"],
+          ["9", "Lenguajes de programación"],
+          ["3", "Mercados: VE · MT · US"],
+          ["2", "Idiomas de trabajo"],
         ],
+        services: [
+          "Desarrollo full-stack",
+          "POS en la nube + fiscal",
+          "Apps Smart TV / móvil",
+          "Ventas B2B ES / EN",
+        ],
+        total: "TOTAL",
+        totalValue: "1 INGENIERO",
+        thanks: "¡GRACIAS POR SU VISITA!",
+        stamp: "EN PRODUCCIÓN",
       },
+      marquee: ["Hostelería", "Retail", "Streaming", "Pagos", "Sector público", "Android", "Fire TV", "Vega OS", "Roku", "iOS", "Web"],
       about: {
-        eyebrow: "01 · Perfil",
-        title: "Ingeniería de software con visión de negocio",
+        label: "Perfil",
+        title: "Ingeniería con visión de negocio",
+        statement:
+          "Ingeniero de Sistemas (UNEFA) que diseña, desarrolla y despliega *aplicaciones web full-stack*, *plataformas POS en la nube* y *apps multimedia para Smart TV y móvil*.",
         body:
-          "Ingeniero de Sistemas (UNEFA) con experiencia práctica diseñando, desarrollando y desplegando aplicaciones web full-stack, plataformas de punto de venta (POS) en la nube, aplicaciones multimedia multiplataforma para Smart TV y móvil, e integraciones comerciales.",
-        body2:
           "Conecto la ingeniería con la ejecución comercial: he entregado sistemas en producción para hostelería, retail, streaming y administración pública, gestionando integraciones con proveedores internacionales y la incorporación de clientes B2B.",
       },
       services: [
         {
-          icon: "code",
-          title: "Desarrollo Full-Stack",
+          title: "Desarrollo full-stack",
           text: "APIs REST, backends y paneles de administración con Node.js, NestJS, Laravel, React y PostgreSQL.",
         },
         {
-          icon: "pos",
-          title: "Sistemas POS y Retail",
+          title: "Sistemas POS y retail",
           text: "Punto de venta en la nube, inventario, autoservicio, recibos fiscales, delivery y pasarelas de pago.",
         },
         {
-          icon: "tv",
           title: "Apps multiplataforma",
           text: "Smart TV y móvil: Android, Fire TV, Vega OS, Roku (BrightScript), iOS y Flutter.",
         },
         {
-          icon: "handshake",
           title: "Arquitectura y negocio",
           text: "Del requisito del comercio a la solución: preventa técnica, negociación B2B y onboarding de clientes.",
         },
       ],
       experience: {
-        eyebrow: "02 · Experiencia",
-        title: "Trayectoria profesional",
+        label: "Experiencia",
+        title: "Trayectoria",
         current: "Actual",
-        visit: "Visitar sitio",
       },
       projects: {
-        eyebrow: "03 · Proyectos",
-        title: "Productos en los que he trabajado",
+        label: "Proyectos",
+        title: "Trabajo seleccionado",
         intro:
-          "Una selección de plataformas comerciales y públicas donde he participado en desarrollo, integración y despliegue.",
+          "Plataformas comerciales y públicas donde he participado en desarrollo, integración y despliegue.",
         role: "Mi rol",
-        visit: "Visitar",
+        stack: "Áreas",
+        fig: "FIG.",
       },
       skills: {
-        eyebrow: "04 · Habilidades",
+        label: "Habilidades",
         title: "Stack técnico y profesional",
       },
       education: {
@@ -121,27 +128,27 @@ window.PORTFOLIO = {
         languagesTitle: "Idiomas",
       },
       contact: {
-        eyebrow: "05 · Contacto",
-        title: "¿Tienes un proyecto en mente?",
+        label: "Contacto",
+        title: "¿*Hablamos*?",
         text:
           "Ya sea un sistema POS, una app para Smart TV o una plataforma web, cuéntame qué necesitas y te respondo lo antes posible.",
         email: "Correo",
-        phone: "Teléfono / WhatsApp",
+        phone: "WhatsApp",
         linkedin: "LinkedIn",
         github: "GitHub",
         copy: "Copiar",
         copied: "¡Copiado!",
         cv: "Currículum",
-        cvValue: "PDF · versión en inglés",
-        write: "Escríbeme",
+        cvValue: "PDF · en inglés",
       },
       footer: {
-        made: "Diseñado y desarrollado con HTML, CSS y JavaScript.",
+        time: "Hora local en Cabudare",
         top: "Volver arriba",
       },
     },
 
     en: {
+      locale: "en-US",
       meta: {
         title: "Miguel García — Systems Engineer & Full-Stack Developer",
         description:
@@ -159,82 +166,87 @@ window.PORTFOLIO = {
         projects: "Projects",
         skills: "Skills",
         contact: "Contact",
+        menu: "Menu",
+        close: "Close",
       },
       hero: {
-        location: "Cabudare, Lara, Venezuela · Remote",
-        greeting: "Hi, I'm",
-        role: "Systems Engineer · Full-Stack Developer · POS & Multiplatform Solutions Architect",
+        kicker: "Portfolio",
+        place: "Cabudare, Lara — Venezuela",
+        time: "Local time",
+        fullName: "Miguel Alejandro García Ovalles",
+        role: "Systems Engineer · Full-Stack · POS & multiplatform",
         lead:
-          "I build software that runs in the real world — cloud POS, Smart TV and mobile apps, web platforms — and I know how to take it all the way to the customer.",
+          "I build software that runs in the real world — cloud POS, Smart TV and mobile apps, web platforms — and I take it all the way to the customer.",
         ctaProjects: "View projects",
-        ctaContact: "Get in touch",
         ctaCv: "Download CV",
+        ctaContact: "Get in touch",
       },
-      stats: [
-        { value: "5", label: "TV & mobile ecosystems" },
-        { value: "9", label: "programming languages" },
-        { value: "3", label: "markets: VE · MT · US" },
-        { value: "2", label: "working languages" },
-      ],
-      sectors: {
-        label: "Production systems for",
-        items: ["Hospitality", "Retail", "Streaming", "Payments", "Public sector"],
-      },
-      terminal: {
-        title: "~/blacksheru — zsh",
-        whoami: "Miguel García · Systems Engineer",
-        focus: [
-          "Cloud POS & fiscal workflows",
-          "Smart TV & mobile apps",
-          "Full-stack web platforms",
+      receipt: {
+        title: "BLACKSHERU · SYSTEMS",
+        place: "Cabudare, Lara · Venezuela",
+        ticket: "RECEIPT #0001",
+        qty: "QTY",
+        desc: "DESCRIPTION",
+        items: [
+          ["5", "TV & mobile ecosystems"],
+          ["9", "Programming languages"],
+          ["3", "Markets: VE · MT · US"],
+          ["2", "Working languages"],
         ],
+        services: [
+          "Full-stack development",
+          "Cloud POS + fiscal",
+          "Smart TV / mobile apps",
+          "B2B sales ES / EN",
+        ],
+        total: "TOTAL",
+        totalValue: "1 ENGINEER",
+        thanks: "THANK YOU FOR VISITING!",
+        stamp: "IN PRODUCTION",
       },
+      marquee: ["Hospitality", "Retail", "Streaming", "Payments", "Public sector", "Android", "Fire TV", "Vega OS", "Roku", "iOS", "Web"],
       about: {
-        eyebrow: "01 · About",
-        title: "Software engineering with a business mindset",
+        label: "About",
+        title: "Engineering with a business mindset",
+        statement:
+          "Systems Engineer (UNEFA) who designs, builds and ships *full-stack web applications*, *cloud POS platforms* and *Smart TV & mobile media apps*.",
         body:
-          "Systems Engineer (UNEFA) with hands-on experience designing, developing and deploying full-stack web applications, cloud point-of-sale (POS) platforms, multiplatform Smart TV/mobile media applications, and commercial integrations.",
-        body2:
           "I bridge software engineering and business execution — delivering production systems across hospitality, retail, media streaming and public administration while managing international vendor integrations and B2B client onboarding.",
       },
       services: [
         {
-          icon: "code",
-          title: "Full-Stack Development",
+          title: "Full-stack development",
           text: "REST APIs, backends and admin dashboards with Node.js, NestJS, Laravel, React and PostgreSQL.",
         },
         {
-          icon: "pos",
-          title: "POS & Retail Systems",
+          title: "POS & retail systems",
           text: "Cloud point of sale, inventory, self-service, fiscal receipts, delivery and payment gateways.",
         },
         {
-          icon: "tv",
-          title: "Multiplatform Apps",
+          title: "Multiplatform apps",
           text: "Smart TV and mobile: Android, Fire TV, Vega OS, Roku (BrightScript), iOS and Flutter.",
         },
         {
-          icon: "handshake",
-          title: "Architecture & Business",
+          title: "Architecture & business",
           text: "From merchant requirements to working solutions: technical pre-sales, B2B negotiation and client onboarding.",
         },
       ],
       experience: {
-        eyebrow: "02 · Experience",
-        title: "Professional experience",
+        label: "Experience",
+        title: "Track record",
         current: "Current",
-        visit: "Visit site",
       },
       projects: {
-        eyebrow: "03 · Projects",
-        title: "Products I've worked on",
+        label: "Projects",
+        title: "Selected work",
         intro:
-          "A selection of commercial and public platforms where I've contributed to development, integration and deployment.",
+          "Commercial and public platforms where I've contributed to development, integration and deployment.",
         role: "My role",
-        visit: "Visit",
+        stack: "Areas",
+        fig: "FIG.",
       },
       skills: {
-        eyebrow: "04 · Skills",
+        label: "Skills",
         title: "Technical & professional stack",
       },
       education: {
@@ -242,22 +254,21 @@ window.PORTFOLIO = {
         languagesTitle: "Languages",
       },
       contact: {
-        eyebrow: "05 · Contact",
-        title: "Have a project in mind?",
+        label: "Contact",
+        title: "Let's *talk*.",
         text:
           "Whether it's a POS system, a Smart TV app or a web platform, tell me what you need and I'll get back to you as soon as possible.",
         email: "Email",
-        phone: "Phone / WhatsApp",
+        phone: "WhatsApp",
         linkedin: "LinkedIn",
         github: "GitHub",
         copy: "Copy",
         copied: "Copied!",
         cv: "Résumé",
         cvValue: "PDF · English",
-        write: "Email me",
       },
       footer: {
-        made: "Designed and built with HTML, CSS and JavaScript.",
+        time: "Local time in Cabudare",
         top: "Back to top",
       },
     },
@@ -410,7 +421,7 @@ window.PORTFOLIO = {
         es: "Localización, integraciones (Wolt, Bolt Food, fiscal) y distribución comercial",
         en: "Localization, integrations (Wolt, Bolt Food, fiscal) and commercial distribution",
       },
-      stack: ["POS", "Fiscal", "Wolt", "Bolt Food", "Payments"],
+      stack: { es: ["POS", "Fiscal", "Wolt", "Bolt Food", "Pagos"], en: ["POS", "Fiscal", "Wolt", "Bolt Food", "Payments"] },
     },
     {
       name: "VivaPlayer",
@@ -443,7 +454,7 @@ window.PORTFOLIO = {
         es: "Lógica de juego, estado y rendimiento",
         en: "Gameplay logic, state and performance",
       },
-      stack: ["Gameplay", "State", "Cross-device"],
+      stack: { es: ["Lógica de juego", "Estado", "Multidispositivo"], en: ["Gameplay", "State", "Cross-device"] },
     },
     {
       name: "Baruc X7 POS",
@@ -457,7 +468,7 @@ window.PORTFOLIO = {
         es: "Desarrollo, soporte y preventa en EE. UU.",
         en: "Development, support and US pre-sales",
       },
-      stack: ["POS", "Hardware", "Checkout"],
+      stack: { es: ["POS", "Hardware", "Cobro"], en: ["POS", "Hardware", "Checkout"] },
     },
     {
       name: { es: "Portal de Transparencia Palavecino", en: "Palavecino Transparency Portal" },
@@ -471,7 +482,7 @@ window.PORTFOLIO = {
         es: "Diseño y desarrollo completo",
         en: "End-to-end design and development",
       },
-      stack: ["Web", "Open data", "Civic"],
+      stack: { es: ["Web", "Datos abiertos", "Gobierno digital"], en: ["Web", "Open data", "GovTech"] },
     },
   ],
 
