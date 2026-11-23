@@ -1,0 +1,12 @@
+// Configuración de Cloudflare Workers para el portafolio (sitio estático).
+// "name" debe coincidir con el nombre del Worker en el panel de Cloudflare.
+{
+  "name": "blacksheru",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    // Carpeta con el sitio (index.html, 404.html, _headers, assets/...)
+    "directory": "./public",
+    // Muestra public/404.html cuando una ruta no existe
+    "not_found_handling": "404-page"
+  }
+}

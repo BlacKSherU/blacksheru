@@ -18,20 +18,21 @@ Node.js · NestJS · React · Laravel · Flutter · PostgreSQL · MariaDB/MySQL 
 
 📫 [tramitesgarciamiguel@gmail.com](mailto:tramitesgarciamiguel@gmail.com) ·
 [LinkedIn](https://www.linkedin.com/in/miguel-garcia-92056228b) ·
-[Portafolio](https://blacksheru.pages.dev/)
+[Portafolio](https://blacksheru.com/)
 
 ---
 
 <details>
-<summary><strong>Sobre este repositorio: portafolio web (Cloudflare Pages)</strong></summary>
+<summary><strong>Sobre este repositorio: portafolio web (Cloudflare Workers)</strong></summary>
 
 El portafolio es un sitio estático (HTML + CSS + JavaScript, sin dependencias ni paso de build) que está en [`public/`](public/).
 
 ```
+wrangler.jsonc            # Configuración de Cloudflare Workers (publica la carpeta public/)
 public/
 ├── index.html            # Estructura de la página
-├── 404.html              # Página de error (Cloudflare Pages la usa automáticamente)
-├── _headers              # Cabeceras de seguridad/caché para Cloudflare Pages
+├── 404.html              # Página de error (rutas inexistentes)
+├── _headers              # Cabeceras de seguridad/caché
 ├── robots.txt · sitemap.xml
 └── assets/
     ├── css/styles.css    # Estilos (tema claro/oscuro, responsive)
@@ -46,20 +47,22 @@ public/
 
 **Idioma:** inglés por defecto. Si el navegador del visitante está en español, la página se muestra en español; la elección manual (botón ES / EN) se recuerda. También se puede forzar con `?lang=es` o `?lang=en` en la URL.
 
-**Desplegar en Cloudflare Pages (desde GitHub):**
+**Desplegar en Cloudflare Workers (desde GitHub):**
 
-1. Cloudflare Dashboard → *Workers & Pages* → *Create* → *Pages* → *Connect to Git* y elige este repositorio.
-2. Rama de producción: la rama donde esté el sitio (p. ej. `main`).
-3. *Framework preset*: **None** · *Build command*: _(vacío)_ · *Build output directory*: **`public`**.
-4. Guarda y despliega. Cada `push` a esa rama publica una nueva versión.
+El Worker `blacksheru` está conectado a este repositorio con *Workers Builds*:
 
-**O desde la terminal con Wrangler:**
+1. Cloudflare → *Workers & Pages* → `blacksheru` → *Settings* → *Build*.
+2. *Branch control* → rama de producción: **`main`**.
+3. *Build command*: _(vacío)_ · *Deploy command*: **`npx wrangler deploy`** · *Root directory*: **`/`**.
+4. Cada `push` a `main` publica una nueva versión. `wrangler.jsonc` indica qué carpeta publicar; su `name` debe coincidir con el nombre del Worker.
+
+**O desde la terminal:**
 
 ```bash
-npx wrangler pages deploy public --project-name=blacksheru
+npx wrangler deploy
 ```
 
-Si el proyecto tiene otro nombre o usas un dominio propio, cambia `https://blacksheru.pages.dev/` en `public/index.html` (canonical, Open Graph y JSON-LD), `public/robots.txt` y `public/sitemap.xml`.
+El dominio configurado es `https://blacksheru.com/`. Si cambia, actualízalo en `public/index.html` (canonical, Open Graph y JSON-LD), `public/robots.txt` y `public/sitemap.xml`.
 
 **Probar en local:**
 
