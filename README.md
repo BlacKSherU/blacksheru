@@ -1,69 +1,68 @@
-# Hola, soy Miguel García 👋
+# Hi, I'm Miguel García 👋
 
-**Ingeniero de Sistemas · Desarrollador Full-Stack · Arquitecto de soluciones POS y multiplataforma**
-_Systems Engineer · Full-Stack Developer · POS & Multiplatform Solutions Architect_
+**Systems Engineer · Full-Stack Developer · POS & Multiplatform Solutions Architect**
 
-📍 Cabudare, Lara, Venezuela · 🌐 Español (nativo) · English (professional)
+📍 Cabudare, Lara, Venezuela · 🌐 Spanish (native) · English (professional)
 
-Construyo software que se usa en el mundo real: puntos de venta en la nube, apps para Smart TV y móvil y plataformas web, y me encargo de que llegue hasta el cliente.
+I build software people use in the real world: cloud point-of-sale systems, Smart TV and mobile apps, and web platforms — and I take it all the way to the customer.
 
-- 🧾 **YumYum POS**: POS en la nube, recibos fiscales e integraciones con Wolt y Bolt Food
-- 📺 **VivaPlayer**: reproductor IPTV para Android, Fire TV, Vega OS, Roku e iOS, con portal de administración
-- 🚐 **Relocate**: simulador multiplataforma de reubicación de autocaravanas
-- 🏢 **HumboldtTech**: ingeniería full-stack en VivaPlayer, Roomfully y YumYum
+- 🧾 **YumYum POS**: cloud POS, fiscal receipts, and Wolt and Bolt Food integrations
+- 📺 **VivaPlayer**: IPTV player for Android, Fire TV, Vega OS, Roku, and iOS, with an admin portal
+- 🚐 **Relocate**: multiplatform motorhome relocation simulator
+- 🏢 **HumboldtTech**: full-stack engineering on VivaPlayer, Roomfully, and YumYum
 
 **Stack:** Python · TypeScript · JavaScript · PHP · Dart · Java · C · BrightScript · SQL ·
 Node.js · NestJS · React · Laravel · Flutter · PostgreSQL · MariaDB/MySQL · Supabase · Cloudflare · WebRTC
 
 📫 [tramitesgarciamiguel@gmail.com](mailto:tramitesgarciamiguel@gmail.com) ·
 [LinkedIn](https://www.linkedin.com/in/miguel-garcia-92056228b) ·
-[Portafolio](https://blacksheru.com/)
+[Portfolio](https://blacksheru.com/)
 
 ---
 
 <details>
-<summary><strong>Sobre este repositorio: portafolio web (Cloudflare Workers)</strong></summary>
+<summary><strong>About this repository: web portfolio (Cloudflare Workers)</strong></summary>
 
-El portafolio es un sitio estático (HTML + CSS + JavaScript, sin dependencias ni paso de build) que está en [`public/`](public/).
+The portfolio is a static site (HTML + CSS + JavaScript, no dependencies and no build step) that lives in [`public/`](public/).
 
 ```
-wrangler.jsonc            # Configuración de Cloudflare Workers (publica la carpeta public/)
+wrangler.jsonc            # Cloudflare Workers config (publishes the public/ folder)
 public/
-├── index.html            # Estructura de la página
-├── 404.html              # Página de error (rutas inexistentes)
-├── _headers              # Cabeceras de seguridad/caché
+├── index.html            # Page structure
+├── 404.html              # Error page (unknown routes)
+├── _headers              # Security and cache headers
 ├── robots.txt · sitemap.xml
 └── assets/
-    ├── css/styles.css    # Estilos (tema claro/oscuro, responsive)
-    ├── js/content.js     # ✏️ TODO el contenido (ES/EN): experiencia, proyectos, habilidades…
-    ├── js/main.js        # Render, idioma, tema, menú, animaciones
-    ├── img/              # favicon, icono iOS, imagen para redes (og-image.png)
-    ├── img/projects/     # Capturas reales de cada producto (WebP 1280×800)
-    └── cv/               # CV descargable en PDF
+    ├── css/styles.css    # Styles (light/dark theme, responsive)
+    ├── js/content.js     # ✏️ ALL content (ES/EN): experience, projects, skills…
+    ├── js/main.js        # Render, language, theme, menu, animations
+    ├── img/              # favicon, iOS icon, social image (og-image.png)
+    ├── img/projects/     # Real product screenshots (WebP 1280×800)
+    └── cv/               # Downloadable CV as PDF
 ```
 
-**Actualizar contenido:** edita `public/assets/js/content.js`. Los campos con forma `{ es: "...", en: "..." }` se muestran según el idioma elegido. Cada proyecto admite `images` (galería de capturas; la primera es la principal) y `links` (web y tiendas oficiales). Si un proyecto no tiene `images`, se muestra una ilustración.
+**Update content:** edit `public/assets/js/content.js`. Fields shaped like `{ es: "...", en: "..." }` are shown according to the selected language. Each project can have `images` (screenshot gallery; the first one is the main image) and `links` (website and official stores). If a project has no `images`, an illustration is shown instead.
 
-**Idioma:** inglés por defecto. Si el navegador del visitante está en español, la página se muestra en español; la elección manual (botón ES / EN) se recuerda. También se puede forzar con `?lang=es` o `?lang=en` en la URL.
+**Language:** English by default. If the visitor’s browser is set to Spanish, the page is shown in Spanish; a manual choice (ES / EN button) is remembered. You can also force it with `?lang=es` or `?lang=en` in the URL.
 
-**Desplegar en Cloudflare Workers (desde GitHub):**
+**Deploy on Cloudflare Workers (from GitHub):**
 
-El Worker `blacksheru` está conectado a este repositorio con *Workers Builds*:
+The `blacksheru` Worker is connected to this repository with *Workers Builds*:
 
 1. Cloudflare → *Workers & Pages* → `blacksheru` → *Settings* → *Build*.
-2. *Branch control* → rama de producción: **`main`**.
-3. *Build command*: _(vacío)_ · *Deploy command*: **`npx wrangler deploy`** · *Root directory*: **`/`**.
-4. Cada `push` a `main` publica una nueva versión. `wrangler.jsonc` indica qué carpeta publicar; su `name` debe coincidir con el nombre del Worker.
+2. *Branch control* → production branch: **`main`**.
+3. *Build command*: _(empty)_ · *Deploy command*: **`npx wrangler deploy`** · *Root directory*: **`/`**.
+4. Each `push` to `main` publishes a new version. `wrangler.jsonc` says which folder to publish; its `name` must match the Worker name.
 
-**O desde la terminal:**
+**Or from the terminal:**
 
 ```bash
 npx wrangler deploy
 ```
 
-El dominio configurado es `https://blacksheru.com/`. Si cambia, actualízalo en `public/index.html` (canonical, Open Graph y JSON-LD), `public/robots.txt` y `public/sitemap.xml`.
+The configured domain is `https://blacksheru.com/`. If it changes, update it in `public/index.html` (canonical, Open Graph, and JSON-LD), `public/robots.txt`, and `public/sitemap.xml`.
 
-**Probar en local:**
+**Run locally:**
 
 ```bash
 python3 -m http.server 8080 --directory public
