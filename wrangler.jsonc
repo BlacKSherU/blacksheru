@@ -2,6 +2,8 @@
 // "name" debe coincidir con el nombre del Worker en el panel de Cloudflare.
 {
   "name": "blacksheru",
+  // Cuenta de Cloudflare donde está el dominio blacksheru.com
+  "account_id": "4f3e9e046535ccf8e49814d8d358c230",
   "compatibility_date": "2025-09-01",
   "assets": {
     // Carpeta con el sitio (index.html, 404.html, _headers, assets/...)
