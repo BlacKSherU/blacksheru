@@ -248,6 +248,12 @@
       n.textContent = String(new Date().getFullYear());
     });
 
+    /* Enlaces de contacto con mensaje / asunto en el idioma actual */
+    var waHref = C.profile.whatsapp + "?text=" + encodeURIComponent(t("contact.waText"));
+    var mailHref = "mailto:" + C.profile.email + "?subject=" + encodeURIComponent(t("contact.mailSubject"));
+    document.querySelectorAll("[data-wa]").forEach(function (a) { a.setAttribute("href", waHref); });
+    document.querySelectorAll("[data-mail]").forEach(function (a) { a.setAttribute("href", mailHref); });
+
     $("statement").innerHTML = rich(t("about.statement"));
     $("contact-title").innerHTML = rich(t("contact.title"));
   }
@@ -493,7 +499,6 @@
   function renderContact() {
     var P = C.profile;
     var items = [
-      { label: t("contact.phone"), value: P.phone, href: P.whatsapp, ext: true },
       { label: t("contact.linkedin"), value: P.linkedinLabel, href: P.linkedin, ext: true },
       { label: t("contact.github"), value: P.githubLabel, href: P.github, ext: true },
       { label: t("contact.cv"), value: t("contact.cvValue"), href: P.cv, download: true },
@@ -652,6 +657,25 @@
     });
   }
 
+  /* Barra flotante: aparece al pasar la portada y se oculta en la sección de contacto */
+  function setupQuickContact() {
+    var dock = $("quick-contact");
+    var contact = $("contact");
+    if (!dock || !contact) return;
+    var contactInView = false;
+    function update() {
+      dock.classList.toggle("is-visible", window.scrollY > 560 && !contactInView);
+    }
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        contactInView = entries[0].isIntersecting;
+        update();
+      }, { rootMargin: "0px 0px -15% 0px" }).observe(contact);
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
   function setupGallery() {
     $("projects-list").addEventListener("click", function (e) {
       var b = e.target.closest(".fig-thumb");
@@ -686,6 +710,7 @@
   observeReveals();
   setupCopy();
   setupGallery();
+  setupQuickContact();
   setInterval(renderClock, 20000);
 
   if (!reduceMotion) root.classList.add("print-receipt");
