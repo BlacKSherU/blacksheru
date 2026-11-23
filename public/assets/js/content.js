@@ -8,7 +8,7 @@ window.PORTFOLIO = {
   profile: {
     name: "Miguel Alejandro García Ovalles",
     shortName: "Miguel García",
-    email: "tramitesgarciamiguel@gmail.com",
+    email: "info@blacksheru.com",
     phone: "+58 414-7749273",
     phoneRaw: "+584147749273",
     whatsapp: "https://wa.me/584147749273",

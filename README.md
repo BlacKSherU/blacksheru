@@ -14,7 +14,7 @@ I build software people use in the real world: cloud point-of-sale systems, Smar
 **Stack:** Python · TypeScript · JavaScript · PHP · Dart · Java · C · BrightScript · SQL ·
 Node.js · NestJS · React · Laravel · Flutter · PostgreSQL · MariaDB/MySQL · Supabase · Cloudflare · WebRTC
 
-📫 [tramitesgarciamiguel@gmail.com](mailto:tramitesgarciamiguel@gmail.com) ·
+📫 [info@blacksheru.com](mailto:info@blacksheru.com) ·
 [LinkedIn](https://www.linkedin.com/in/miguel-garcia-92056228b) ·
 [Portfolio](https://blacksheru.com/)
 
