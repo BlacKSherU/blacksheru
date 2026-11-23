@@ -79,14 +79,14 @@ window.PORTFOLIO = {
         thanks: "¡GRACIAS POR SU VISITA!",
         stamp: "EN PRODUCCIÓN",
       },
-      marquee: ["Hostelería", "Retail", "Streaming", "Pagos", "Sector público", "Android", "Fire TV", "Vega OS", "Roku", "iOS", "Web"],
+      marquee: ["Hostelería", "Retail", "Streaming", "Pagos", "Android", "Fire TV", "Vega OS", "Roku", "iOS", "Web"],
       about: {
         label: "Perfil",
         title: "Ingeniería con visión de negocio",
         statement:
           "Ingeniero de Sistemas (UNEFA) que diseña, desarrolla y despliega *aplicaciones web full-stack*, *plataformas POS en la nube* y *apps multimedia para Smart TV y móvil*.",
         body:
-          "Conecto la ingeniería con la ejecución comercial: he entregado sistemas en producción para hostelería, retail, streaming y administración pública, gestionando integraciones con proveedores internacionales y la incorporación de clientes B2B.",
+          "Conecto la ingeniería con la ejecución comercial: he entregado sistemas en producción para hostelería, retail y streaming, gestionando integraciones con proveedores internacionales y la incorporación de clientes B2B.",
       },
       services: [
         {
@@ -115,7 +115,7 @@ window.PORTFOLIO = {
         label: "Proyectos",
         title: "Trabajo seleccionado",
         intro:
-          "Plataformas comerciales y públicas donde he participado en desarrollo, integración y despliegue.",
+          "Productos comerciales donde he participado en desarrollo, integración y despliegue.",
         role: "Mi rol",
         stack: "Áreas",
         links: "Enlaces oficiales",
@@ -213,14 +213,14 @@ window.PORTFOLIO = {
         thanks: "THANK YOU FOR VISITING!",
         stamp: "IN PRODUCTION",
       },
-      marquee: ["Hospitality", "Retail", "Streaming", "Payments", "Public sector", "Android", "Fire TV", "Vega OS", "Roku", "iOS", "Web"],
+      marquee: ["Hospitality", "Retail", "Streaming", "Payments", "Android", "Fire TV", "Vega OS", "Roku", "iOS", "Web"],
       about: {
         label: "About",
         title: "Engineering with a business mindset",
         statement:
           "Systems Engineer (UNEFA) who designs, builds and ships *full-stack web applications*, *cloud POS platforms* and *Smart TV & mobile media apps*.",
         body:
-          "I bridge software engineering and business execution — delivering production systems across hospitality, retail, media streaming and public administration while managing international vendor integrations and B2B client onboarding.",
+          "I bridge software engineering and business execution — delivering production systems across hospitality, retail and media streaming while managing international vendor integrations and B2B client onboarding.",
       },
       services: [
         {
@@ -249,7 +249,7 @@ window.PORTFOLIO = {
         label: "Projects",
         title: "Selected work",
         intro:
-          "Commercial and public platforms where I've contributed to development, integration and deployment.",
+          "Commercial products where I've contributed to development, integration and deployment.",
         role: "My role",
         stack: "Areas",
         links: "Official links",
@@ -376,23 +376,6 @@ window.PORTFOLIO = {
       tags: {
         es: ["Full-Stack", "Backend", "Frontend", "APIs de terceros"],
         en: ["Full-Stack", "Backend", "Frontend", "Third-party APIs"],
-      },
-    },
-    {
-      company: "Concejo Municipal del Municipio Palavecino",
-      role: { es: "Pasante de Ingeniería de Sistemas", en: "Systems Engineering Intern" },
-      meta: { es: "Cabudare, Venezuela", en: "Cabudare, Venezuela" },
-      bullets: {
-        es: [
-          "Diseñé y construí una plataforma de transparencia de la tesorería pública y el portal web municipal para digitalizar la rendición de cuentas y mejorar el acceso ciudadano a los registros financieros públicos.",
-        ],
-        en: [
-          "Designed and built a public treasury transparency platform and municipal web portal to digitize civic reporting and improve citizen access to public financial records.",
-        ],
-      },
-      tags: {
-        es: ["Gobierno digital", "Transparencia", "Portal web"],
-        en: ["GovTech", "Transparency", "Web portal"],
       },
     },
   ],
@@ -559,20 +542,6 @@ window.PORTFOLIO = {
         { label: "Steam", url: "https://store.steampowered.com/app/5174850/Relocate_Motorhomes_Simulator/" },
         { label: { es: "Google Play (prueba)", en: "Google Play (playtest)" }, url: "https://play.google.com/store/apps/details?id=com.crispolimited.relocate" },
       ],
-    },
-    {
-      name: { es: "Portal de Transparencia Palavecino", en: "Palavecino Transparency Portal" },
-      art: "civic",
-      kind: { es: "Gobierno digital · Cabudare", en: "GovTech · Cabudare" },
-      summary: {
-        es: "Plataforma de transparencia de la tesorería pública y portal web municipal.",
-        en: "Public treasury transparency platform and municipal web portal.",
-      },
-      role: {
-        es: "Diseño y desarrollo completo",
-        en: "End-to-end design and development",
-      },
-      stack: { es: ["Web", "Datos abiertos", "Gobierno digital"], en: ["Web", "Open data", "GovTech"] },
     },
   ],
 

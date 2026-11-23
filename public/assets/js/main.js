@@ -128,25 +128,6 @@
       '<circle class="a-wheel" cx="254" cy="164" r="13"/><circle class="a-accent" cx="254" cy="164" r="4"/>' +
       '<path class="a-line" d="M20 178h360"/>' +
       '<path class="a-line a-dashed-wide" d="M30 190h340"/>',
-    civic:
-      '<path class="a-panel" d="M40 76 120 38l80 38z"/>' +
-      '<circle class="a-accent" cx="120" cy="62" r="6"/>' +
-      '<rect class="a-panel" x="48" y="76" width="144" height="10" rx="1"/>' +
-      '<rect class="a-muted" x="58" y="90" width="12" height="56" rx="1"/>' +
-      '<rect class="a-muted" x="86" y="90" width="12" height="56" rx="1"/>' +
-      '<rect class="a-muted" x="114" y="90" width="12" height="56" rx="1"/>' +
-      '<rect class="a-muted" x="142" y="90" width="12" height="56" rx="1"/>' +
-      '<rect class="a-muted" x="170" y="90" width="12" height="56" rx="1"/>' +
-      '<rect class="a-panel" x="40" y="148" width="160" height="12" rx="1"/>' +
-      '<rect class="a-panel" x="222" y="26" width="150" height="138" rx="6"/>' +
-      '<path class="a-line" d="M238 44h46"/>' +
-      '<rect class="a-soft" x="240" y="104" width="16" height="36" rx="1"/>' +
-      '<rect class="a-soft" x="264" y="82" width="16" height="58" rx="1"/>' +
-      '<rect class="a-soft" x="288" y="96" width="16" height="44" rx="1"/>' +
-      '<rect class="a-accent" x="312" y="64" width="16" height="76" rx="1"/>' +
-      '<rect class="a-accent" x="336" y="50" width="16" height="90" rx="1"/>' +
-      '<path class="a-line" d="M236 146h120"/>' +
-      '<path class="a-route" d="m248 92 24-18 24 12 24-30 24-14"/>',
   };
 
   function art(name) {
