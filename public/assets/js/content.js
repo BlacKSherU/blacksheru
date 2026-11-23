@@ -117,7 +117,11 @@ window.PORTFOLIO = {
           "Plataformas comerciales y públicas donde he participado en desarrollo, integración y despliegue.",
         role: "Mi rol",
         stack: "Áreas",
+        links: "Enlaces oficiales",
         fig: "FIG.",
+        illustration: "Ilustración",
+        source: "Imagen",
+        view: "Ver imagen",
       },
       skills: {
         label: "Habilidades",
@@ -243,7 +247,11 @@ window.PORTFOLIO = {
           "Commercial and public platforms where I've contributed to development, integration and deployment.",
         role: "My role",
         stack: "Areas",
+        links: "Official links",
         fig: "FIG.",
+        illustration: "Illustration",
+        source: "Image",
+        view: "View image",
       },
       skills: {
         label: "Skills",
@@ -350,10 +358,10 @@ window.PORTFOLIO = {
       current: true,
       bullets: {
         es: [
-          "Ingeniería full-stack en varios productos comerciales —VivaPlayer, Roomfuly y YumYum—: servicios backend, interfaces frontend e integraciones con APIs de terceros.",
+          "Ingeniería full-stack en varios productos comerciales —VivaPlayer, Roomfully y YumYum—: servicios backend, interfaces frontend e integraciones con APIs de terceros.",
         ],
         en: [
-          "Contributed full-stack engineering across multiple commercial software products, including VivaPlayer, Roomfuly and YumYum, delivering backend services, frontend interfaces and third-party API integrations.",
+          "Contributed full-stack engineering across multiple commercial software products, including VivaPlayer, Roomfully and YumYum, delivering backend services, frontend interfaces and third-party API integrations.",
         ],
       },
       tags: {
@@ -404,14 +412,15 @@ window.PORTFOLIO = {
     },
   ],
 
-  /* ---------- Proyectos destacados ---------- */
+  /* ---------- Proyectos destacados ----------
+   * images: capturas reales (assets/img/projects). La primera es la principal.
+   * links:  enlaces oficiales (web y tiendas). "label" puede ser texto o { es, en }.
+   * Si un proyecto no tiene images, se muestra una ilustración (art).
+   */
   projects: [
     {
       name: "YumYum POS",
       art: "pos",
-      wide: true,
-      url: "https://yumyumcloud.com",
-      domain: "yumyumcloud.com",
       kind: { es: "POS en la nube · Hostelería y retail", en: "Cloud POS · Hospitality & retail" },
       summary: {
         es: "Suite de punto de venta en la nube para restaurantes y comercios: ventas, inventario, autoservicio «Scan & Go» y pantallas de cocina, con recibos fiscales, delivery integrado y pasarelas de pago.",
@@ -422,39 +431,149 @@ window.PORTFOLIO = {
         en: "Localization, integrations (Wolt, Bolt Food, fiscal) and commercial distribution",
       },
       stack: { es: ["POS", "Fiscal", "Wolt", "Bolt Food", "Pagos"], en: ["POS", "Fiscal", "Wolt", "Bolt Food", "Payments"] },
+      images: [
+        {
+          src: "assets/img/projects/yumyum-app.webp",
+          alt: { es: "App YumYum POS: caja, pedidos, mesas e informes", en: "YumYum POS app: till, orders, tables and reports" },
+          source: "App Store",
+        },
+        {
+          src: "assets/img/projects/yumyum-orders.webp",
+          alt: { es: "Tablero de pedidos de YumYum con Wolt y Bolt Food", en: "YumYum order board with Wolt and Bolt Food" },
+          source: "yumyumcloud.com",
+        },
+      ],
+      links: [
+        { label: "yumyumcloud.com", url: "https://yumyumcloud.com", primary: true },
+        { label: "App Store", url: "https://apps.apple.com/sg/app/yumyum-pos/id6786316514" },
+        { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.yumyumcloud.app" },
+      ],
     },
     {
       name: "VivaPlayer",
       art: "tv",
-      wide: true,
-      url: "https://vivaplayer.tv",
-      domain: "vivaplayer.tv",
-      kind: { es: "Streaming · Smart TV y móvil", en: "Streaming · Smart TV & mobile" },
+      kind: { es: "Streaming · Smart TV, móvil y escritorio", en: "Streaming · Smart TV, mobile & desktop" },
       summary: {
-        es: "Reproductor IPTV para cinco ecosistemas de TV y móvil, con un portal web de administración que gestiona usuarios, suscripciones y una red de revendedores multinivel.",
-        en: "IPTV media player for five TV and mobile ecosystems, with a web admin portal handling users, subscriptions and a multi-tier reseller network.",
+        es: "Reproductor IPTV multiplataforma para TV, móvil y escritorio, con un portal web de administración que gestiona usuarios, suscripciones y una red de revendedores multinivel.",
+        en: "Cross-platform IPTV media player for TV, mobile and desktop, with a web admin portal handling users, subscriptions and a multi-tier reseller network.",
       },
       role: {
         es: "Desarrollo de apps multiplataforma y del portal de administración",
         en: "Multiplatform app development and admin portal",
       },
       stack: ["Android", "Fire TV", "Vega OS", "Roku", "iOS"],
+      images: [
+        {
+          src: "assets/img/projects/vivaplayer-tv-mobile.webp",
+          alt: { es: "VivaPlayer en Smart TV y en móvil", en: "VivaPlayer on a Smart TV and a phone" },
+          source: "vivaplayer.tv",
+        },
+        {
+          src: "assets/img/projects/vivaplayer-devices.webp",
+          alt: { es: "VivaPlayer en portátil, tableta, móvil y TV", en: "VivaPlayer on laptop, tablet, phone and TV" },
+          source: "vivaplayer.tv",
+        },
+        {
+          src: "assets/img/projects/vivaplayer-panel.webp",
+          alt: { es: "Panel web de administración de VivaPlayer", en: "VivaPlayer web admin panel" },
+          source: "vivaplayer.tv",
+        },
+        {
+          src: "assets/img/projects/vivaplayer-firetv.webp",
+          alt: { es: "VivaPlayer en Amazon Fire TV", en: "VivaPlayer on Amazon Fire TV" },
+          source: "vivaplayer.tv",
+        },
+      ],
+      links: [
+        { label: "vivaplayer.tv", url: "https://vivaplayer.tv", primary: true },
+        { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.vivaplayer.app" },
+        { label: { es: "App Store (iPhone/iPad)", en: "App Store (iPhone/iPad)" }, url: "https://apps.apple.com/us/app/vivaplayer-media-player/id6758025001" },
+        { label: "Apple TV", url: "https://apps.apple.com/us/app/vivaplayer-media-player-tv/id6761728334" },
+        { label: "Amazon Fire TV", url: "https://www.amazon.com/dp/B0GLF1FBP3/" },
+        { label: "Roku", url: "https://channelstore.roku.com/details/39cd6bbec5858481d492adf16e3902c6:9e4a42d86908427873004cbfc6e40c60/vivaplayer-media-player" },
+        { label: "Windows", url: "https://apps.microsoft.com/detail/9p69h6c18x94" },
+        { label: "Xbox", url: "https://apps.microsoft.com/detail/9p6rzcfh91f3" },
+      ],
     },
     {
-      name: "Relocate",
-      art: "van",
-      url: "https://relocategame.com",
-      domain: "relocategame.com",
-      kind: { es: "Videojuego · Móvil y escritorio", en: "Game · Mobile & desktop" },
+      name: "Roomfully",
+      art: "pos",
+      kind: { es: "Gestión hotelera (PMS) · Hoteles, B&B y alquileres", en: "Property management (PMS) · Hotels, B&Bs & rentals" },
       summary: {
-        es: "Simulador de reubicación de autocaravanas y vehículos multiplataforma.",
-        en: "Cross-platform motorhome and vehicle relocation simulator.",
+        es: "Sistema para gestionar hoteles, B&B y alquileres vacacionales: reservas, recepción, limpieza, pagos, web de reservas propia y conexión con portales como Booking.com y Airbnb, en un solo programa.",
+        en: "System to run hotels, B&Bs and holiday rentals: reservations, front desk, housekeeping, payments, an own booking website and travel sites such as Booking.com and Airbnb, in one program.",
       },
       role: {
-        es: "Lógica de juego, estado y rendimiento",
-        en: "Gameplay logic, state and performance",
+        es: "Ingeniería full-stack: servicios backend, interfaces frontend e integraciones con APIs de terceros",
+        en: "Full-stack engineering: backend services, frontend interfaces and third-party API integrations",
+      },
+      stack: {
+        es: ["Reservas", "Recepción", "Limpieza", "Pagos", "Portales OTA"],
+        en: ["Reservations", "Front desk", "Housekeeping", "Payments", "OTA channels"],
+      },
+      images: [
+        {
+          src: "assets/img/projects/roomfully-calendar.webp",
+          alt: { es: "Calendario de reservas de Roomfully con reservas de varios portales", en: "Roomfully reservation calendar with bookings from several travel sites" },
+          source: "roomfullycloud.com",
+        },
+        {
+          src: "assets/img/projects/roomfully-today.webp",
+          alt: { es: "Pantalla «Hoy»: llegadas, importes pendientes y check-in", en: "\"Today\" screen: arrivals, amounts due and check-in" },
+          source: "roomfullycloud.com",
+        },
+        {
+          src: "assets/img/projects/roomfully-housekeeping.webp",
+          alt: { es: "Tablero de limpieza por planta y por camarera", en: "Housekeeping board by floor and housekeeper" },
+          source: "roomfullycloud.com",
+        },
+        {
+          src: "assets/img/projects/roomfully-portfolio.webp",
+          alt: { es: "Vista de cartera de un grupo hotelero: ocupación e ingresos", en: "Hotel group portfolio: occupancy and revenue" },
+          source: "roomfullycloud.com",
+        },
+      ],
+      links: [
+        { label: "roomfullycloud.com", url: "https://roomfullycloud.com/", primary: true },
+        { label: { es: "App web", en: "Web app" }, url: "https://app.roomfullycloud.com/login" },
+        { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.roomfully.app" },
+      ],
+    },
+    {
+      name: "Relocate Motorhomes Simulator",
+      art: "van",
+      kind: { es: "Videojuego · PC, Mac, iOS y Android", en: "Game · PC, Mac, iOS & Android" },
+      summary: {
+        es: "Simulador de mundo abierto de reubicación de autocaravanas y vehículos, multijugador y multiplataforma para móvil y escritorio.",
+        en: "Open-world motorhome and vehicle relocation simulator, multiplayer and cross-platform for mobile and desktop.",
+      },
+      role: {
+        es: "Lógica de juego, gestión de estado y rendimiento entre dispositivos",
+        en: "Gameplay logic, state management and cross-device performance",
       },
       stack: { es: ["Lógica de juego", "Estado", "Multidispositivo"], en: ["Gameplay", "State", "Cross-device"] },
+      images: [
+        {
+          src: "assets/img/projects/relocate-key-art.webp",
+          alt: { es: "Arte principal de Relocate: autocaravana cruzando un puente", en: "Relocate key art: a motorhome crossing a bridge" },
+          source: "relocategame.com",
+        },
+        {
+          src: "assets/img/projects/relocate-megacity.webp",
+          alt: { es: "Mundo «Megacity» de Relocate", en: "Relocate \"Megacity\" world" },
+          source: "relocategame.com",
+        },
+        {
+          src: "assets/img/projects/relocate-arctic.webp",
+          alt: { es: "Mundo «Arctic» de Relocate", en: "Relocate \"Arctic\" world" },
+          source: "relocategame.com",
+        },
+      ],
+      links: [
+        { label: "relocategame.com", url: "https://relocategame.com", primary: true },
+        { label: "Steam", url: "https://store.steampowered.com/app/5174850/Relocate_Motorhomes_Simulator/" },
+        { label: { es: "Google Play (prueba)", en: "Google Play (playtest)" }, url: "https://play.google.com/store/apps/details?id=com.crispolimited.relocate" },
+      ],
     },
     {
       name: "Baruc X7 POS",

@@ -20,10 +20,24 @@
   var reduceMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var lang = store.get("lang");
-  if (lang !== "es" && lang !== "en") {
-    lang = /^es\b/i.test(navigator.language || "es") ? "es" : "en";
+  /* Idioma: 1) ?lang=es|en en la URL  2) elección guardada  3) idioma del navegador
+     (español → "es"; cualquier otro o desconocido → inglés por defecto) */
+  function detectLang() {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    var first = String(list[0] || "").toLowerCase();
+    return first.indexOf("es") === 0 ? "es" : "en";
   }
+
+  var lang = null;
+  try {
+    var qp = new URLSearchParams(window.location.search).get("lang");
+    if (qp === "es" || qp === "en") {
+      lang = qp;
+      store.set("lang", qp);
+    }
+  } catch (e) { /* URLSearchParams no disponible */ }
+  if (!lang) lang = store.get("lang");
+  if (lang !== "es" && lang !== "en") lang = detectLang();
 
   function L(v) {
     if (v && typeof v === "object" && !Array.isArray(v) && ("es" in v || "en" in v)) {
@@ -325,15 +339,100 @@
       .join("");
   }
 
+  /* Imagen seleccionada en cada galería (se conserva al cambiar de idioma) */
+  var galleryIndex = {};
+
+  function figCaption(p, n, idx) {
+    var img = p.images && p.images[idx];
+    if (!img) {
+      return "<span>" + esc(t("projects.fig")) + " " + n + " · " + esc(t("projects.illustration")) + "</span><span>" + esc(L(p.name)) + "</span>";
+    }
+    return (
+      '<span class="fig-alt">' + esc(t("projects.fig")) + " " + n + "." + (idx + 1) + " · " + esc(L(img.alt)) + "</span>" +
+      "<span>" + esc(t("projects.source")) + ": " + esc(img.source) + "</span>"
+    );
+  }
+
+  function projectFigure(p, i, n) {
+    if (!p.images || !p.images.length) {
+      return (
+        '<figure class="proj-fig">' +
+        '<div class="fig-frame">' + art(p.art) + "</div>" +
+        "<figcaption>" + figCaption(p, n, -1) + "</figcaption>" +
+        "</figure>"
+      );
+    }
+    var idx = galleryIndex[i] || 0;
+    var cur = p.images[idx];
+    var thumbs = "";
+    if (p.images.length > 1) {
+      thumbs =
+        '<div class="fig-thumbs">' +
+        p.images.map(function (img, k) {
+          return (
+            '<button type="button" class="fig-thumb' + (k === idx ? " is-active" : "") + '" data-proj="' + i + '" data-img="' + k + '"' +
+            ' aria-pressed="' + (k === idx ? "true" : "false") + '" aria-label="' + esc(t("projects.view") + " " + (k + 1) + ": " + L(img.alt)) + '">' +
+            '<img src="' + esc(img.src) + '" alt="" width="1280" height="800" loading="lazy" decoding="async">' +
+            "</button>"
+          );
+        }).join("") +
+        "</div>";
+    }
+    return (
+      '<figure class="proj-fig" data-proj="' + i + '">' +
+      '<div class="fig-frame is-photo">' +
+      '<img class="fig-img" src="' + esc(cur.src) + '" alt="' + esc(L(cur.alt)) + '" width="1280" height="800"' +
+      (i === 0 ? "" : ' loading="lazy"') + ' decoding="async">' +
+      "</div>" +
+      "<figcaption>" + figCaption(p, n, idx) + "</figcaption>" +
+      thumbs +
+      "</figure>"
+    );
+  }
+
+  function projectLinks(p) {
+    if (!p.links || !p.links.length) return "";
+    return (
+      '<div class="proj-links">' +
+      '<p class="proj-links-label">' + esc(t("projects.links")) + "</p>" +
+      "<ul>" +
+      p.links.map(function (l) {
+        return (
+          "<li>" +
+          '<a class="' + (l.primary ? "proj-link" : "store-link") + '" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+          esc(L(l.label)) + ARROW_UR + "</a>" +
+          "</li>"
+        );
+      }).join("") +
+      "</ul>" +
+      "</div>"
+    );
+  }
+
+  function setGalleryImage(i, k) {
+    var p = C.projects[i];
+    if (!p || !p.images || !p.images[k]) return;
+    galleryIndex[i] = k;
+    var fig = document.querySelector('.proj-fig[data-proj="' + i + '"]');
+    if (!fig) return;
+    var n = pad(i + 1);
+    var img = fig.querySelector(".fig-img");
+    img.src = p.images[k].src;
+    img.alt = L(p.images[k].alt);
+    fig.querySelector("figcaption").innerHTML = figCaption(p, n, k);
+    fig.querySelectorAll(".fig-thumb").forEach(function (b) {
+      var on = b.getAttribute("data-img") === String(k);
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
   function renderProjects() {
     var total = pad(C.projects.length);
     $("projects-list").innerHTML = C.projects
       .map(function (p, i) {
         var n = pad(i + 1);
         var name = L(p.name);
-        var link = p.url
-          ? '<a class="proj-link" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.domain) + ARROW_UR + "</a>"
-          : "";
         return (
           '<article class="proj reveal">' +
           '<div class="proj-text">' +
@@ -345,12 +444,9 @@
           "<div><dt>" + esc(t("projects.role")) + "</dt><dd>" + esc(L(p.role)) + "</dd></div>" +
           "<div><dt>" + esc(t("projects.stack")) + "</dt><dd>" + slashList(L(p.stack)) + "</dd></div>" +
           "</dl>" +
-          link +
+          projectLinks(p) +
           "</div>" +
-          '<figure class="proj-fig">' +
-          '<div class="fig-frame">' + art(p.art) + "</div>" +
-          "<figcaption><span>" + esc(t("projects.fig")) + " " + n + "</span><span>" + esc(name) + "</span></figcaption>" +
-          "</figure>" +
+          projectFigure(p, i, n) +
           "</article>"
         );
       })
@@ -556,6 +652,14 @@
     });
   }
 
+  function setupGallery() {
+    $("projects-list").addEventListener("click", function (e) {
+      var b = e.target.closest(".fig-thumb");
+      if (!b) return;
+      setGalleryImage(parseInt(b.getAttribute("data-proj"), 10), parseInt(b.getAttribute("data-img"), 10));
+    });
+  }
+
   function setupCopy() {
     document.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-copy]");
@@ -581,6 +685,7 @@
   setupActiveNav();
   observeReveals();
   setupCopy();
+  setupGallery();
   setInterval(renderClock, 20000);
 
   if (!reduceMotion) root.classList.add("print-receipt");

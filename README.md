@@ -10,7 +10,7 @@ Construyo software que se usa en el mundo real: puntos de venta en la nube, apps
 - 🧾 **YumYum POS**: POS en la nube, recibos fiscales e integraciones con Wolt y Bolt Food
 - 📺 **VivaPlayer**: reproductor IPTV para Android, Fire TV, Vega OS, Roku e iOS, con portal de administración
 - 🚐 **Relocate**: simulador multiplataforma de reubicación de autocaravanas
-- 🏢 **HumboldtTech**: ingeniería full-stack en VivaPlayer, Roomfuly y YumYum
+- 🏢 **HumboldtTech**: ingeniería full-stack en VivaPlayer, Roomfully y YumYum
 - 💳 **Capital Payment Systems**: módulos POS (Baruc X7) y ventas B2B en EE. UU.
 
 **Stack:** Python · TypeScript · JavaScript · PHP · Dart · Java · C · BrightScript · SQL ·
@@ -38,10 +38,13 @@ public/
     ├── js/content.js     # ✏️ TODO el contenido (ES/EN): experiencia, proyectos, habilidades…
     ├── js/main.js        # Render, idioma, tema, menú, animaciones
     ├── img/              # favicon, icono iOS, imagen para redes (og-image.png)
+    ├── img/projects/     # Capturas reales de cada producto (WebP 1280×800)
     └── cv/               # CV descargable en PDF
 ```
 
-**Actualizar contenido:** edita `public/assets/js/content.js`. Los campos con forma `{ es: "...", en: "..." }` se muestran según el idioma elegido.
+**Actualizar contenido:** edita `public/assets/js/content.js`. Los campos con forma `{ es: "...", en: "..." }` se muestran según el idioma elegido. Cada proyecto admite `images` (galería de capturas; la primera es la principal) y `links` (web y tiendas oficiales). Si un proyecto no tiene `images`, se muestra una ilustración.
+
+**Idioma:** inglés por defecto. Si el navegador del visitante está en español, la página se muestra en español; la elección manual (botón ES / EN) se recuerda. También se puede forzar con `?lang=es` o `?lang=en` en la URL.
 
 **Desplegar en Cloudflare Pages (desde GitHub):**
 
