@@ -16,7 +16,8 @@ window.PORTFOLIO = {
     linkedinLabel: "in/miguel-garcia-92056228b",
     github: "https://github.com/blacksheru",
     githubLabel: "github.com/blacksheru",
-    cv: "assets/cv/Miguel-Garcia-CV.pdf",
+    // CV en PDF por idioma (se generan con cv/build.cjs)
+    cv: { es: "assets/cv/Miguel-Garcia-CV-ES.pdf", en: "assets/cv/Miguel-Garcia-CV-EN.pdf" },
     timeZone: "America/Caracas",
   },
 
@@ -148,7 +149,7 @@ window.PORTFOLIO = {
         waText: "Hola Miguel, vi tu portafolio y me gustaría hablar contigo.",
         mailSubject: "Contacto desde tu portafolio",
         cv: "Currículum",
-        cvValue: "PDF · en inglés",
+        cvValue: "PDF · español",
       },
       footer: {
         time: "Hora local en Cabudare",

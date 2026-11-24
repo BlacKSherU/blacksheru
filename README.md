@@ -27,6 +27,9 @@ The portfolio is a static site (HTML + CSS + JavaScript, no dependencies and no 
 
 ```
 wrangler.jsonc            # Cloudflare Workers config (publishes the public/ folder)
+cv/
+├── cv.html               # ✏️ CV template, English + Spanish in one file
+└── build.cjs             # Generates the two CV PDFs into public/assets/cv/
 public/
 ├── index.html            # Page structure
 ├── 404.html              # Error page (unknown routes)
@@ -38,10 +41,20 @@ public/
     ├── js/main.js        # Render, language, theme, menu, animations
     ├── img/              # favicon, iOS icon, social image (og-image.png)
     ├── img/projects/     # Real product screenshots (WebP 1280×800)
-    └── cv/               # Downloadable CV as PDF
+    └── cv/               # CV PDFs: Miguel-Garcia-CV-EN.pdf and Miguel-Garcia-CV-ES.pdf
 ```
 
 **Update content:** edit `public/assets/js/content.js`. Fields shaped like `{ es: "...", en: "..." }` are shown according to the selected language. Each project can have `images` (screenshot gallery; the first one is the main image) and `links` (website and official stores). If a project has no `images`, an illustration is shown instead.
+
+**CV:** the site downloads the CV in the language currently shown (EN or ES). To change the CV, edit `cv/cv.html` (each text has an English `<span class="en">` and a Spanish `<span class="es">` version; preview it in a browser with `cv/cv.html?lang=en` or `?lang=es`) and regenerate both PDFs:
+
+```bash
+npm i --no-save playwright && npx playwright install chromium
+```
+
+```bash
+node cv/build.cjs
+```
 
 **Language:** English by default. If the visitor’s browser is set to Spanish, the page is shown in Spanish; a manual choice (ES / EN button) is remembered. You can also force it with `?lang=es` or `?lang=en` in the URL.
 

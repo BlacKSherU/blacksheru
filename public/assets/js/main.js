@@ -211,6 +211,13 @@
     document.querySelectorAll("[data-wa]").forEach(function (a) { a.setAttribute("href", waHref); });
     document.querySelectorAll("[data-mail]").forEach(function (a) { a.setAttribute("href", mailHref); });
 
+    /* CV en el idioma actual de la web */
+    var cvHref = L(C.profile.cv);
+    document.querySelectorAll("[data-cv]").forEach(function (a) {
+      a.setAttribute("href", cvHref);
+      a.setAttribute("download", cvHref.split("/").pop());
+    });
+
     $("statement").innerHTML = rich(t("about.statement"));
     $("contact-title").innerHTML = rich(t("contact.title"));
   }
@@ -458,7 +465,7 @@
     var items = [
       { label: t("contact.linkedin"), value: P.linkedinLabel, href: P.linkedin, ext: true },
       { label: t("contact.github"), value: P.githubLabel, href: P.github, ext: true },
-      { label: t("contact.cv"), value: t("contact.cvValue"), href: P.cv, download: true },
+      { label: t("contact.cv"), value: t("contact.cvValue"), href: L(P.cv), download: true },
     ];
     $("contact-links").innerHTML = items
       .map(function (it) {

@@ -1,0 +1,397 @@
+<!doctype html>
+<!--
+  Currículum de Miguel Alejandro García Ovalles — plantilla bilingüe (EN / ES).
+  Cada texto tiene su versión en <span class="en"> y <span class="es">.
+  Vista previa en el navegador: cv.html?lang=en  o  cv.html?lang=es
+  Generar los PDF:  node cv/build.cjs   (ver README)
+-->
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Curriculum Vitae — Miguel Alejandro García Ovalles</title>
+  <script>
+    (function () {
+      var l = new URLSearchParams(location.search).get("lang");
+      if (l === "es" || l === "en") {
+        document.documentElement.setAttribute("data-lang", l);
+        document.documentElement.setAttribute("lang", l);
+      }
+      if (document.documentElement.getAttribute("data-lang") === "es") {
+        document.title = "Currículum Vitae — Miguel Alejandro García Ovalles";
+      }
+    })();
+  </script>
+  <style>
+    html[data-lang="en"] .es,
+    html[data-lang="es"] .en {
+      display: none !important;
+    }
+
+    @page {
+      size: A4;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Liberation Sans", Helvetica, sans-serif;
+      color: #1e293b;
+      background: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Vista previa en pantalla con el tamaño de una hoja A4 */
+    @media screen {
+      body {
+        background: #e2e8f0;
+        padding: 24px 0;
+      }
+      .sheet {
+        width: 665px;
+        margin: 0 auto;
+        padding: 57px 65px 78px 64px;
+        background: #fff;
+        box-shadow: 0 4px 24px rgba(15, 23, 42, 0.15);
+      }
+    }
+
+    /* ---------- Cabecera ---------- */
+    .cv-header {
+      padding-bottom: 10px;
+      border-bottom: 2px solid #0f294a;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20pt;
+      font-weight: bold;
+      color: #0f294a;
+      line-height: normal;
+    }
+
+    .headline {
+      margin: 4.5px 0 0;
+      font-size: 10.5pt;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+
+    .contact {
+      margin-top: 9.5px;
+      display: grid;
+      grid-template-columns: 266.4px 1fr;
+      font-size: 9.5pt;
+      line-height: 1.7;
+      color: #334155;
+    }
+
+    .contact b {
+      color: #0f294a;
+    }
+
+    .contact .wide {
+      grid-column: 1 / -1;
+    }
+
+    .contact a:hover {
+      color: #1d4ed8;
+    }
+
+    /* ---------- Secciones ---------- */
+    h2 {
+      margin: 22px 0 0;
+      padding-bottom: 5.5px;
+      border-bottom: 1px solid #cbd5e1;
+      font-size: 11.5pt;
+      font-weight: bold;
+      color: #0f294a;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: normal;
+      break-after: avoid;
+    }
+
+    .summary {
+      margin: 0;
+      font-size: 10pt;
+      line-height: 1.48;
+      color: #1e293b;
+    }
+
+    /* ---------- Habilidades ---------- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      line-height: 1.4;
+    }
+
+    th,
+    td {
+      padding: 4px 6px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    th {
+      color: #475569;
+      border-bottom-color: #cbd5e1;
+    }
+
+    td:first-child {
+      width: 175px;
+      font-weight: bold;
+      color: #0f294a;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    /* ---------- Experiencia y educación ---------- */
+    .entry {
+      margin-top: 12px;
+      break-inside: avoid;
+    }
+
+    h2 + .entry {
+      margin-top: 9px;
+    }
+
+    .entry-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .entry-title {
+      margin: 0;
+      flex: 1;
+      padding-left: 1px;
+      font-size: 10.5pt;
+      font-weight: bold;
+      line-height: 20px;
+      color: #0f172a;
+    }
+
+    .entry-title .org {
+      color: #1d4ed8;
+    }
+
+    .meta {
+      flex: none;
+      font-size: 9.5pt;
+      color: #475569;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 9.8pt;
+      line-height: 19px;
+      color: #1e293b;
+    }
+
+    li + li {
+      margin-top: 3px;
+    }
+
+    .edu {
+      margin-top: 2px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 9.8pt;
+      line-height: 19px;
+      break-inside: avoid;
+    }
+
+    .edu strong {
+      color: #0f172a;
+    }
+
+    .edu .school {
+      display: block;
+      color: #334155;
+    }
+
+    .edu .meta {
+      line-height: 19px;
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <!-- ================= CABECERA ================= -->
+    <header class="cv-header">
+      <h1>Miguel Alejandro García Ovalles</h1>
+      <p class="headline">
+        <span class="en">Systems Engineer | Full-Stack Software Developer &amp; POS / Multiplatform Solutions Architect</span>
+        <span class="es">Ingeniero de Sistemas | Desarrollador Full-Stack y Arquitecto de Soluciones POS / Multiplataforma</span>
+      </p>
+      <div class="contact">
+        <div><b><span class="en">Location:</span><span class="es">Ubicación:</span></b> Cabudare, Lara, Venezuela</div>
+        <div><b><span class="en">Phone:</span><span class="es">Teléfono:</span></b> <a href="https://wa.me/584147749273">+58 414-7749273</a></div>
+        <div><b><span class="en">Email:</span><span class="es">Correo:</span></b> <a href="mailto:info@blacksheru.com">info@blacksheru.com</a></div>
+        <div><b><span class="en">Website:</span><span class="es">Sitio web:</span></b>
+          <a class="en" href="https://blacksheru.com/?lang=en">blacksheru.com</a><a class="es" href="https://blacksheru.com/?lang=es">blacksheru.com</a></div>
+        <div><b>GitHub:</b> <a href="https://github.com/blacksheru">github.com/blacksheru</a></div>
+        <div><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/miguel-garcia-92056228b">linkedin.com/in/miguel-garcia-92056228b</a></div>
+        <div class="wide"><b><span class="en">Languages:</span><span class="es">Idiomas:</span></b>
+          <span class="en">Spanish (Native), English (Professional Working)</span><span class="es">Español (nativo), Inglés (nivel profesional)</span></div>
+      </div>
+    </header>
+
+    <!-- ================= RESUMEN ================= -->
+    <h2><span class="en">Professional Summary</span><span class="es">Resumen profesional</span></h2>
+    <p class="summary">
+      <span class="en">Systems Engineer (UNEFA) with hands-on experience designing, developing, and deploying full-stack web applications, cloud point-of-sale (POS) platforms, multiplatform Smart TV/mobile media applications, and commercial integrations. Proven track record bridging software engineering and business execution—delivering production systems across hospitality, retail, media streaming, and public administration while managing international vendor integrations and B2B client onboarding.</span>
+      <span class="es">Ingeniero de Sistemas (UNEFA) con experiencia práctica en el diseño, desarrollo y despliegue de aplicaciones web full-stack, plataformas de punto de venta (POS) en la nube, aplicaciones multimedia multiplataforma para Smart TV y móvil, e integraciones comerciales. Trayectoria comprobada uniendo la ingeniería de software con la ejecución de negocio: he entregado sistemas en producción para hostelería, retail, streaming y administración pública, gestionando integraciones con proveedores internacionales y la incorporación de clientes B2B.</span>
+    </p>
+
+    <!-- ================= HABILIDADES ================= -->
+    <h2><span class="en">Core Technical &amp; Professional Skills</span><span class="es">Habilidades técnicas y profesionales</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th><span class="en">Domain</span><span class="es">Área</span></th>
+          <th><span class="en">Technologies &amp; Capabilities</span><span class="es">Tecnologías y capacidades</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="en">Languages</span><span class="es">Lenguajes</span></td>
+          <td>Python, TypeScript, JavaScript, PHP, Dart, C, Java, BrightScript, SQL</td>
+        </tr>
+        <tr>
+          <td><span class="en">Frameworks &amp; Platforms</span><span class="es">Frameworks y plataformas</span></td>
+          <td>Node.js, NestJS, React, Laravel, Flutter, Android, Fire TV, Vega OS, Roku, iOS</td>
+        </tr>
+        <tr>
+          <td><span class="en">Databases &amp; Cloud</span><span class="es">Bases de datos y nube</span></td>
+          <td><span class="en">PostgreSQL, MariaDB / MySQL, Supabase, Cloudflare, REST APIs, WebRTC</span><span class="es">PostgreSQL, MariaDB / MySQL, Supabase, Cloudflare, APIs REST, WebRTC</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Integrations &amp; Domain</span><span class="es">Integraciones y dominio</span></td>
+          <td><span class="en">POS Systems, Fiscal Receipt Workflows, Stripe, PayPal, Wolt &amp; Bolt Food Aggregators</span><span class="es">Sistemas POS, flujos de recibos fiscales, Stripe, PayPal, agregadores Wolt y Bolt Food</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Commercial &amp; Soft Skills</span><span class="es">Comercial y habilidades blandas</span></td>
+          <td><span class="en">Technical Sales, B2B Negotiation, Solution Architecture, Cross-Border Distribution</span><span class="es">Ventas técnicas, negociación B2B, arquitectura de soluciones, distribución internacional</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ================= EXPERIENCIA ================= -->
+    <h2><span class="en">Professional Experience</span><span class="es">Experiencia profesional</span></h2>
+
+    <section class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">
+          <span class="en">Software Developer &amp; Commercial Distribution Partner</span><span class="es">Desarrollador de Software y Socio de Distribución Comercial</span>
+          — <a class="org" href="https://yumyumcloud.com">YumYum POS (yumyumcloud.com)</a>
+        </h3>
+        <span class="meta"><span class="en">Malta &amp; Venezuela</span><span class="es">Malta y Venezuela</span></span>
+      </div>
+      <ul>
+        <li><span class="en">Adapt, localize, and deploy cloud-based point-of-sale, inventory management, self-service ("Scan &amp; Go"), and kitchen display solutions for restaurant and retail operations.</span><span class="es">Adapto, localizo y despliego soluciones en la nube de punto de venta, gestión de inventario, autoservicio («Scan &amp; Go») y pantallas de cocina para restaurantes y comercios.</span></li>
+        <li><span class="en">Implement fiscal receipt compliance workflows and third-party delivery aggregator integrations including Wolt and Bolt Food alongside payment processing gateways.</span><span class="es">Implemento flujos de cumplimiento fiscal para recibos e integraciones con agregadores de delivery como Wolt y Bolt Food, junto con pasarelas de pago.</span></li>
+        <li><span class="en">Lead technical onboarding and commercial distribution efforts, translating merchant operational requirements into tailored software configurations.</span><span class="es">Lidero el onboarding técnico y la distribución comercial, traduciendo los requisitos operativos de cada comercio en configuraciones de software a medida.</span></li>
+      </ul>
+    </section>
+
+    <section class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">
+          <span class="en">Software Developer</span><span class="es">Desarrollador de Software</span>
+          — <a class="org" href="https://vivaplayer.tv">VivaPlayer (vivaplayer.tv)</a>
+        </h3>
+        <span class="meta"><span class="en">Remote</span><span class="es">Remoto</span></span>
+      </div>
+      <ul>
+        <li><span class="en">Develop and maintain a cross-platform IPTV media player spanning Android, Amazon Fire TV, Vega OS, Roku (BrightScript), and iOS ecosystems.</span><span class="es">Desarrollo y mantengo un reproductor IPTV multiplataforma para Android, Amazon Fire TV, Vega OS, Roku (BrightScript) e iOS.</span></li>
+        <li><span class="en">Build and support the web administration portal, managing user authentication, subscription lifecycles, and multi-tier reseller provisioning.</span><span class="es">Construyo y doy soporte al portal web de administración: autenticación de usuarios, ciclo de vida de suscripciones y aprovisionamiento de revendedores multinivel.</span></li>
+      </ul>
+    </section>
+
+    <section class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">
+          <span class="en">Software Developer</span><span class="es">Desarrollador de Software</span>
+          — <a class="org" href="https://relocategame.com">Relocate (relocategame.com)</a>
+        </h3>
+        <span class="meta"><span class="en">Remote</span><span class="es">Remoto</span></span>
+      </div>
+      <ul>
+        <li><span class="en">Engineer a cross-platform motorhome and vehicle relocation simulation game targeting both mobile and desktop environments, focusing on core gameplay logic, state management, and cross-device performance.</span><span class="es">Desarrollo un juego de simulación de reubicación de autocaravanas y vehículos para móvil y escritorio, centrado en la lógica de juego, la gestión de estado y el rendimiento entre dispositivos.</span></li>
+      </ul>
+    </section>
+
+    <section class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">
+          <span class="en">Software Development Engineer</span><span class="es">Ingeniero de Desarrollo de Software</span>
+          — <span class="org">HumboldtTech (Humboldt Tech OÜ)</span>
+        </h3>
+        <span class="meta"><span class="en">Sep 2025 – Present</span><span class="es">Sep 2025 – Actualidad</span></span>
+      </div>
+      <ul>
+        <li><span class="en">Contributed full-stack engineering across multiple commercial software products, including VivaPlayer, Roomfully, and YumYum, delivering backend services, frontend interfaces, and third-party API integrations.</span><span class="es">Ingeniería full-stack en varios productos comerciales, entre ellos VivaPlayer, Roomfully y YumYum: servicios backend, interfaces frontend e integraciones con APIs de terceros.</span></li>
+      </ul>
+    </section>
+
+    <section class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">
+          <span class="en">Software Development Engineer &amp; Sales Executive</span><span class="es">Ingeniero de Desarrollo de Software y Ejecutivo de Ventas</span>
+          — <span class="org">Capital Payment Systems</span>
+        </h3>
+        <span class="meta"><span class="en">Aug 2024 – Present · Barquisimeto / US Market</span><span class="es">Ago 2024 – Actualidad · Barquisimeto / EE. UU.</span></span>
+      </div>
+      <ul>
+        <li><span class="en">Developed and supported point-of-sale software modules, including the Baruc X7 POS system, aligning hardware peripherals and checkout logic with merchant needs.</span><span class="es">Desarrollé y di soporte a módulos de software de punto de venta, incluido el sistema POS Baruc X7, alineando periféricos de hardware y lógica de cobro con las necesidades de cada comercio.</span></li>
+        <li><span class="en">Operated as a B2B sales executive for a US-based POS provider, conducting product demonstrations, merchant consultations, and contract negotiations in English and Spanish.</span><span class="es">Ejecutivo de ventas B2B para un proveedor de POS de EE. UU.: demostraciones de producto, consultoría a comercios y negociación de contratos en inglés y español.</span></li>
+      </ul>
+    </section>
+
+    <section class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">
+          <span class="en">Systems Engineering Intern</span><span class="es">Pasante de Ingeniería de Sistemas</span>
+          — <span class="org">Concejo Municipal del Municipio Palavecino</span>
+        </h3>
+        <span class="meta">Cabudare, Venezuela</span>
+      </div>
+      <ul>
+        <li><span class="en">Designed and built a public treasury transparency platform and municipal web portal to digitize civic reporting and improve citizen access to public financial records.</span><span class="es">Diseñé y construí una plataforma de transparencia de la tesorería pública y el portal web municipal para digitalizar la rendición de cuentas y mejorar el acceso ciudadano a los registros financieros públicos.</span></li>
+      </ul>
+    </section>
+
+    <!-- ================= EDUCACIÓN ================= -->
+    <h2><span class="en">Education &amp; Additional Background</span><span class="es">Educación y formación adicional</span></h2>
+    <div class="edu">
+      <div>
+        <strong><span class="en">Bachelor of Engineering in Systems Engineering (Ingeniería de Sistemas)</span><span class="es">Ingeniería de Sistemas</span></strong>
+        <span class="school">Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional Bolivariana (UNEFA)</span>
+      </div>
+      <span class="meta">Sep 2021 – Sep 2026</span>
+    </div>
+  </main>
+</body>
+</html>

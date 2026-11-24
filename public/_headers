@@ -8,5 +8,8 @@
 /assets/img/*
   Cache-Control: public, max-age=604800
 
-/assets/cv/*
-  Content-Disposition: attachment; filename="Miguel-Garcia-CV.pdf"
+/assets/cv/Miguel-Garcia-CV-EN.pdf
+  Content-Disposition: attachment; filename="Miguel-Garcia-CV-EN.pdf"
+
+/assets/cv/Miguel-Garcia-CV-ES.pdf
+  Content-Disposition: attachment; filename="Miguel-Garcia-CV-ES.pdf"
